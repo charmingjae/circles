@@ -14,17 +14,26 @@ html,body{
 }
 
 body{
-	display:table;
+	display:table-cell;
 	margin: 0 auto;
 	background-color: #ffffff;
 }
 
-.container{
+/* .container{
 	height: 100%;
 	display: table-cell;
 	vertical-align: middle;
 	text-align:center;
 	background-color: #ffffff;
+} */
+
+.container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	text-align:center;
 }
 
 
@@ -97,6 +106,12 @@ button:hover{
 }
 
 #showEtc{
+	margin-top:10px;
+	display:block;
+}
+
+#showRetIndex{
+	color: blue;
 	margin-top:10px;
 	display:block;
 }

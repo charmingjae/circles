@@ -41,32 +41,58 @@
 	
 </head>
 <body>
+	<%
+		/*
+		* 2020. 07. 09
+		* memo : index.jsp에서 입력한 학번을 받는 변수 생성
+		* 변수 명 : getStuNo
+		* 타입 : String
+		* writer : minjae
+		*/
+		String getStuNo = request.getParameter("inputStuNo");
+	%>
+	
+	
+	<!-- include header -->
+	<%@include file ="../../navbar/navbar.jsp" %>
+
 	<!-- 
 	2020. 07. 08.
 	writer : minjae 
 	-->
-	<div class="container">
-		<span id="showWelcome"> 🍀 환영합니다 🍀 </span>
-		<span id="showEtc"> 여러분을 알고싶어요!</span>
-		<div class="main">
-			<input type="text" placeholder="이름">
+	<form action="chkInterest.jsp" class="container" method="post" name="frmInfo">
+		<div class="container">
+			<span id="showWelcome"> 🍀 <%=getStuNo %> 님 환영합니다 🍀 </span>
+			<span id="showRetIndex" onClick="javascript:location.href='index.jsp'" style="cursor:hand" onfocus="blur();"> >학번 다시 입력하기< </span>
+			<span id="showEtc"> 당신에 대해 알고싶어요!</span>
+			<div class="main">
+				<input type="text" placeholder="이름">
+			</div>
+			<div class="main">
+				<input type="text" onkeyup="inputPhoneNumber(this)" class="phoneNum" maxlength="13" placeholder="📞">
+			</div>
+			<div class="main">
+				<select name=class>
+					<option value="" disabled selected>학년을 선택하세요</option>
+					<option value=1>1
+					<option value=2>2
+					<option value=3>3
+				</select>
+			</div>
+			<div class="main">
+				<select name=class>
+					<option value="" disabled selected>반을 선택하세요</option>
+					<option value="A">A
+					<option value="B">B
+					<option value="C">C
+				</select>
+			</div>
+			
+			<div class="subBtn">
+				<button type="submit">다 작성했어요!</button>
+			</div>
 		</div>
-		<div class="main">
-			<input type="text" onkeyup="inputPhoneNumber(this)" class="phoneNum" maxlength="13" placeholder="📞">
-		</div>
-		<div class="main">
-			<select name=class>
-				<option value="" disabled selected>반을 선택하세요</option>
-				<option value=1>A
-				<option value=2>B
-				<option value=3>C
-			</select>
-		</div>
-		
-		<div class="subBtn">
-			<button>다 작성했어요!</button>
-		</div>
-	</div>
+	</form>
 	
 </body>
 </html>
