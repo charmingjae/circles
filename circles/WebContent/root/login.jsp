@@ -18,18 +18,19 @@
 	2020. 07. 08.
 	writer : minjae 
 	-->
-	<form action="chkInterest.jsp" class="container" method="post" name="frmInfo">
+	<form action="../proc/loginProc.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showLogin"> 관리자 롸긴 </span>
 			<div class="main">
-				<input type="text" placeholder="아디">
+				<input type="text" name="userID" placeholder="아디">
 			</div>
 			<div class="main">
-				<input type="password" class="passwd" placeholder="패썰드">
+				<input type="password" name="userPW" class="passwd" placeholder="패썰드">
 			</div>
 			<div class="subBtn">
 				<button type="submit">로그인</button>
 			</div>
+			
 		</div>
 	</form>
 	

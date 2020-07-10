@@ -42,8 +42,7 @@
 </head>
 <body>
 	<!-- include header -->
-	<%@include file ="../../navbar/navbar.jsp" %>
-
+	<%@include file ="../navbar/navbar.jsp" %>
 	<!-- 
 	2020. 07. 08.
 	writer : minjae 
