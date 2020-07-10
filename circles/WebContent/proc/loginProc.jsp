@@ -21,7 +21,8 @@
 			objDB.select("SELECT COUNT(*) FROM admTbl WHERE userID = '" + userID + "' and userPW = '" + userPW + "'" );
 			
 			if(objDB.rs.next() == false || (userID.isEmpty()) == true){
-				result = 1;
+				/* 수정 해야함 */
+			 	return;
 			}
 			else{
 				if(objDB.rs.getString(1).equals("1")){

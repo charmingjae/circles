@@ -42,6 +42,8 @@
 </head>
 <body>
 	<%
+	
+		request.setCharacterEncoding("UTF-8");
 		/*
 		* 2020. 07. 09
 		* memo : index.jsp에서 입력한 학번을 받는 변수 생성
@@ -49,30 +51,30 @@
 		* 타입 : String
 		* writer : minjae
 		*/
-		String getStuNo = request.getParameter("inputStuNo");
+		String getStuNo = (String)request.getAttribute("inputStuNo");
 	%>
 	
 	
 	<!-- include header -->
-	<%@include file ="../../navbar/navbar.jsp" %>
+	<%@include file ="../navbar/navbar.jsp" %>
 
 	<!-- 
 	2020. 07. 08.
 	writer : minjae 
 	-->
-	<form action="chkInterest.jsp" class="container" method="post" name="frmInfo">
+	<form action="../root/chkInterest.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 🍀 <%=getStuNo %> 님 환영합니다 🍀 </span>
 			<span id="showRetIndex" onClick="javascript:location.href='index.jsp'" style="cursor:hand" onfocus="blur();"> >학번 다시 입력하기< </span>
 			<span id="showEtc"> 당신에 대해 알고싶어요!</span>
 			<div class="main">
-				<input type="text" placeholder="이름">
+				<input type="text" name="stuName" placeholder="이름">
 			</div>
 			<div class="main">
-				<input type="text" onkeyup="inputPhoneNumber(this)" class="phoneNum" maxlength="13" placeholder="📞">
+				<input type="text" name="stuPhone" onkeyup="inputPhoneNumber(this)" class="phoneNum" maxlength="13" placeholder="📞">
 			</div>
 			<div class="main">
-				<select name=class>
+				<select name="grade">
 					<option value="" disabled selected>학년을 선택하세요</option>
 					<option value=1>1
 					<option value=2>2
@@ -80,7 +82,7 @@
 				</select>
 			</div>
 			<div class="main">
-				<select name=class>
+				<select name="class">
 					<option value="" disabled selected>반을 선택하세요</option>
 					<option value="A">A
 					<option value="B">B
@@ -89,6 +91,7 @@
 			</div>
 			
 			<div class="subBtn">
+				<input type="hidden" name="stuNo" value="<%=getStuNo %>" />
 				<button type="submit">다 작성했어요!</button>
 			</div>
 		</div>

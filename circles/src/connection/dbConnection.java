@@ -1,8 +1,11 @@
 package connection;
 
+
+
 public class dbConnection {
 	
 	public java.sql.Connection conn;
+	public java.sql.PreparedStatement pstmt;
 	public java.sql.Statement stmt;
 	public java.sql.ResultSet rs;
 	
@@ -27,11 +30,23 @@ public class dbConnection {
 		}
 	}
 	
+	/* Insert Method */
+	public void insert(String dbInsert) {
+		try {
+			this.stmt.executeUpdate(dbInsert);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	
 	/* Update Method */
 	public void update(String dbCommand) {
 		try {
 			this.stmt.executeUpdate(dbCommand);
+			System.out.println("Insert 성공!");
 		}
 		catch(Exception e)
 		{

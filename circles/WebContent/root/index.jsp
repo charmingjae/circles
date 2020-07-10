@@ -51,7 +51,7 @@
 	memo : form tag 추가
 	writer : minjae
 	-->
-	<form onsubmit="return false;" action="wrInfo.jsp" class="container" method="post" name="frmStuNo">
+	<form onsubmit="return false;" action="../proc/chkDupStuNo.jsp" class="container" method="post" name="frmStuNo">
 		<div class="container">
 			<span> 모죽! </span>
 			<div class="main">
