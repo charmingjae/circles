@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +9,27 @@
 
 	<!-- Link chkInterest.css -->
 	<link href="../css/chkInterest.css" rel="stylesheet" type="text/css">
+	<script>
+	function validForm(){
+		var isInterChk = false;
+		var arr_Inter = document.getElementsByName("interest");
+		var frmInfo = document.frmInfo;
+		for(var i=0; i<arr_Inter.length; i++){
+			if(arr_Inter[i].checked == true){
+				isInterChk = true;
+				break;
+			}
+		}
+		
+		if(!isInterChk){
+			alert("관심 분야를 1개 이상 선택해주세요.");
+			return false;
+		}
+		else{
+			frmInfo.submit();
+		}
+	}
+	</script>
 	
 </head>
 <body>
@@ -22,10 +44,20 @@
 		* writer : minjae
 		*/
 		String getStuNo = request.getParameter("stuNo");
+		if(getStuNo == null){
+			 
+			PrintWriter outs = response.getWriter();
+			 
+			outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
+			 
+			outs.flush();
+
+			
+		}
 		String getStuName = request.getParameter("stuName");
 		String getStuPhone = request.getParameter("stuPhone");
 		String getStuGrade = request.getParameter("grade");
-		String getStuClass = request.getParameter("class");
+		String getStuClass = request.getParameter("stuClass");
 		
 		System.out.println("학번 : " + getStuNo);
 		System.out.println("이름 : " + getStuName);
@@ -43,7 +75,7 @@
 	2020. 07. 08.
 	writer : minjae 
 	-->
-	<form action="../proc/enterProc.jsp" class="container" method="post" name="frmInfo">
+	<form onsubmit="return false;" action="../proc/enterProc.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 몇 가지만 더 물어볼게요!🥰</span>
 			<span id="showRetIndex" onClick="javascript:history.back();" style="cursor:hand" onfocus="blur();"> >정보 다시 입력하기< </span>
@@ -62,7 +94,7 @@
 				<input type="hidden" name="stuPhone" value="<%=getStuPhone %>" />
 				<input type="hidden" name="stuGrade" value="<%=getStuGrade %>" />
 				<input type="hidden" name="stuClass" value="<%=getStuClass %>" />
-				<button type="submit">체크 했어요!</button>
+				<button type="button" onclick="validForm()">체크 했어요!</button>
 			</div>
 		</div>
 	</form>

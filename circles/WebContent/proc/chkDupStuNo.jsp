@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="connection.dbConnection" %>
@@ -19,6 +20,17 @@
 	* writer : minjae
 	*/
 	String getStuNo = request.getParameter("inputStuNo");
+	
+	if(getStuNo == null){
+		 
+		PrintWriter outs = response.getWriter();
+		 
+		outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
+		 
+		outs.flush();
+
+		
+	}
 	
 	dbConnection dbCon = new dbConnection();
 	

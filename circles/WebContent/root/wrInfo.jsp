@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,6 +38,29 @@
 	    }
 	    obj.value = phone;
 	}
+	
+	
+	function validForm(){
+		var frmInfo = document.frmInfo;
+		var stuName = frmInfo.stuName.value;
+		var stuPhone = frmInfo.stuPhone.value;
+		var stuGrade = frmInfo.grade.value;
+		var stuClass = frmInfo.stuClass.value;
+		
+		if(!stuName||!stuPhone||!stuGrade||!stuClass){
+			alert('모든 항목을 입력해주세요.');
+			return;
+		}
+		else{
+			frmInfo.submit();
+		}
+	}
+	
+	function entValidForm(e){
+		if(event.keyCode == 13){
+			validForm();
+		}
+	}
 	</script>
 	
 </head>
@@ -52,6 +76,17 @@
 		* writer : minjae
 		*/
 		String getStuNo = (String)request.getAttribute("inputStuNo");
+
+		if(getStuNo == null){
+			 
+			PrintWriter outs = response.getWriter();
+			 
+			outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
+			 
+			outs.flush();
+
+			
+		}
 	%>
 	
 	
@@ -62,16 +97,16 @@
 	2020. 07. 08.
 	writer : minjae 
 	-->
-	<form action="../root/chkInterest.jsp" class="container" method="post" name="frmInfo">
+	<form onsubmit="return false;" action="../root/chkInterest.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 🍀 <%=getStuNo %> 님 환영합니다 🍀 </span>
 			<span id="showRetIndex" onClick="javascript:location.href='index.jsp'" style="cursor:hand" onfocus="blur();"> >학번 다시 입력하기< </span>
 			<span id="showEtc"> 당신에 대해 알고싶어요!</span>
 			<div class="main">
-				<input type="text" name="stuName" placeholder="이름">
+				<input type="text" onkeydown="entValidForm()" name="stuName" placeholder="이름">
 			</div>
 			<div class="main">
-				<input type="text" name="stuPhone" onkeyup="inputPhoneNumber(this)" class="phoneNum" maxlength="13" placeholder="📞">
+				<input type="text" name="stuPhone" onkeyup="inputPhoneNumber(this)" onkeydown="entValidForm()" class="phoneNum" maxlength="13" placeholder="📞">
 			</div>
 			<div class="main">
 				<select name="grade">
@@ -82,7 +117,7 @@
 				</select>
 			</div>
 			<div class="main">
-				<select name="class">
+				<select name="stuClass">
 					<option value="" disabled selected>반을 선택하세요</option>
 					<option value="A">A
 					<option value="B">B
@@ -92,7 +127,7 @@
 			
 			<div class="subBtn">
 				<input type="hidden" name="stuNo" value="<%=getStuNo %>" />
-				<button type="submit">다 작성했어요!</button>
+				<button type="button" onclick="validForm()">다 작성했어요!</button>
 			</div>
 		</div>
 	</form>

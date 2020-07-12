@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="connection.dbConnection" %>
@@ -13,6 +14,12 @@
 		request.setCharacterEncoding("UTF-8");
 
 		String getStuNo = request.getParameter("stuNo");
+		if(getStuNo == null){
+			PrintWriter outs = response.getWriter();
+			outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
+			outs.flush();
+		}
+		
 		String getStuName = request.getParameter("stuName");
 		String getStuPhone = request.getParameter("stuPhone");
 		String getStuGrade = request.getParameter("stuGrade");
