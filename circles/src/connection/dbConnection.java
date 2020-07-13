@@ -15,7 +15,7 @@ public class dbConnection {
 	}
 	
 	public void connect() {
-		String dbInfo = "jdbc:mysql://172.30.1.28:3306/entMojuk?characterEncoding=UTF-8&serverTimezone=UTC";
+		String dbInfo = "jdbc:mysql://127.0.0.1:3306/entMojuk?characterEncoding=UTF-8&serverTimezone=UTC";
 		String dbID = "gomojuk";
 		String dbPW = "Jumpman23!";
 		
