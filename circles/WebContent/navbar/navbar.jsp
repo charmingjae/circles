@@ -18,7 +18,7 @@
 		<%
 			if((getSession != null) && (getSession.isEmpty() == false)){
 				%>
-				<li style="float:right" id="main-menu2"><a class="active" href="admPg.jsp"><%=getSession %>님 환영합니다.</a>
+				<li style="float:right" id="main-menu2"><a class="active" href="../root/admPg.jsp"><%=getSession %>님 환영합니다.</a>
 					<ul id="sub-menu">
 						<li><a class="subAct" href="../proc/logout.jsp">로그아웃</a></li>
 					</ul>
@@ -26,12 +26,13 @@
 				<%
 			}
 			else{
+				
 				%>
-				<li style="float:right"><a class="active" href="login.jsp">롸긴</a></li>
+				<li style="float:right"><a class="active" href="../root/login.jsp">롸긴</a></li>
 				<%
 			}
 		%>
-		<li style="float:right"><a class="active" href="contact.jsp">Contact</a></li>
+		<li style="float:right"><a class="active" href="../root/contact.jsp">Contact</a></li>
 	</ul>
 </body>
 </html>
