@@ -117,6 +117,7 @@
 					<option value="A">A
 					<option value="B">B
 					<option value="C">C
+					<option value="J">J
 				</select>
 			</div>
 			
