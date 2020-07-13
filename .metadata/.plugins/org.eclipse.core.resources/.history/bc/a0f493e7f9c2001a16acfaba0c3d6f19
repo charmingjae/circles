@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MOJUK</title>
+
+	<!-- Link chkInterest.css -->
+	<link href="../css/chkInterest.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<%
+		request.setCharacterEncoding("UTF-8");
+		/*
+		* 2020. 07. 09
+		* memo : index.jsp에서 입력한 학번을 받는 변수 생성
+		* 변수 명 : getStuNo
+		* 타입 : String
+		* writer : minjae
+		*/
+		String getStuNo = request.getParameter("stuNo");
+		String getStuName = request.getParameter("stuName");
+		String getStuPhone = request.getParameter("stuPhone");
+		String getStuGrade = request.getParameter("stuGrade");
+		String getStuClass = request.getParameter("stuClass");
+		String[] getStuInterest = request.getParameterValues("interest");
+		String getInterest;
+		
+		System.out.println("학번 : " + getStuNo);
+		System.out.println("이름 : " + getStuName);
+		System.out.println("번호 : " + getStuPhone);
+		System.out.println("반 - 번호 : " + getStuGrade + "-" + getStuClass);
+		for(int i = 0; i < getStuInterest.length; i++)
+		{
+			if(i == (getStuInterest.length -1)){
+				getInterest = getInterest + getStuInterest[i];
+			}
+			else{
+				getInterest = getInterest + getStuInterest[i] + ", ";
+			}
+			
+		}
+		System.out.println("관심사 변수 : " + getInterest);
+		System.out.println(" ");
+		
+		
+		
+	%>
+	
+	
+	<!-- include header -->
+	<%@include file ="../navbar/navbar.jsp" %>
+
+
+	<div class="container">
+		<span id="showWelcome"> 감사합니다! </span>
+		<span id="showWelcome"> 검토 후에 연락 드리겠습니다! </span>
+		<div class="subBtn">
+			<button>체크 했어요!</button>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MOJUK</title>
+
+	<!-- Link contact.css -->
+	<link href="../css/contact.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- include header -->
+	<%@include file ="../navbar/navbar.jsp" %>
+
+	<form onsubmit="return false;" action="wrInfo.jsp" class="container" method="post" name="frmStuNo">
+		<div class="container">
+			<span> Contact </span>
+			<div class="main">
+				
+			</div>
+		</div>
+	</form>
+</body>
+</html>

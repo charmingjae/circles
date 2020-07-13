@@ -1,0 +1,31 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="connection.dbConnection" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MOJUK</title>
+
+	<!-- Link admPg.css -->
+	<link href="../css/admPg.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<!-- include header -->
+	<%@include file ="../navbar/navbar.jsp" %>
+	
+	<%
+	
+		String getSess = (String)session.getAttribute("userID");
+		if(getSess == null){
+			PrintWriter outs = response.getWriter();
+			outs.println("<script>alert('로그인이 필요합니다.'); location.href='login.jsp';</script>");
+			outs.flush();
+		}
+		else{
+			
+		}
+</body>
+</html>

@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+	<!-- Link navbar.css -->
+	<link href="../css/navbar.css" rel="stylesheet" type="text/css">
+</head>
+	<%
+		String getSession = (String)session.getAttribute("userID");
+	%>
+<body>
+	<ul>
+		<li class="headName" id="main-menu1"><a href="../root/index.jsp" class="headName">CIRCLES</a></li>
+		<%
+			if(getSession != null || !getSession.isEmpty()){
+				%>
+				<li style="float:right" id="main-menu2"><a class="active" href="login.jsp"><%=getSession %>님 환영합니다.</a>
+					<ul id="sub-menu">
+						<li><a class="subAct" href="#">submenu1</a></li>
+						<li><a class="subAct" href="#">submenu1</a></li>
+						<li><a class="subAct" href="#">submenu1</a></li>
+						<li><a class="subAct" href="#">submenu1</a></li>
+					</ul>
+				</li>
+				<%
+			}
+			else{
+				%>
+				<li style="float:right"><a class="active" href="login.jsp">롸긴</a></li>
+				<%
+			}
+		%>
+		<li style="float:right"><a class="active" href="contact.jsp">Contact</a></li>
+	</ul>
+</body>
+</html>

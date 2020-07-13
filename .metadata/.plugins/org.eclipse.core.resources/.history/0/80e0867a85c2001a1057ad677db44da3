@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="connection.dbConnection" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MOJUK</title>
+</head>
+<body>
+	<%
+		String userID = request.getParameter("userID");
+		String userPW = request.getParameter("userPW");
+		
+		dbConnection objDB = new dbConnection();
+	
+		objDB.connect();
+		
+		try{
+			
+		}
+	%>
+
+</body>
+</html>

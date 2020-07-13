@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+ul{
+	width:100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	position:fixed;
+}
+
+li {
+	float:none;
+}
+
+a {
+
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+a:hover {
+  background-color: #70c3a7;
+  color:#ffffff;
+}
+
+li .headName{
+	font-weight: bold;
+}
+
+#sub-menu{
+	position:absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#main-menu1, #main-menu2{
+	float:left;
+}
+
+#main-menu2:hover #sub-menu{
+	opacity:1;
+	visibility:visible;
+}
+.subAct{
+	width:150px !important;
+}
