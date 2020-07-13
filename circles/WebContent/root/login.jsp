@@ -14,10 +14,6 @@
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
 
-	<!-- 
-	2020. 07. 08.
-	writer : minjae 
-	-->
 	<form action="../proc/loginProc.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showLogin"> 관리자 롸긴 </span>

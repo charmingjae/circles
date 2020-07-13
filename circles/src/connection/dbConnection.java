@@ -15,9 +15,9 @@ public class dbConnection {
 	}
 	
 	public void connect() {
-		String dbInfo = "jdbc:mysql://localhost:3306/entMojuk?characterEncoding=UTF-8&serverTimezone=UTC";
-		String dbID = "root";
-		String dbPW = "chaminjae";
+		String dbInfo = "jdbc:mysql://172.30.1.28:3306/entMojuk?characterEncoding=UTF-8&serverTimezone=UTC";
+		String dbID = "gomojuk";
+		String dbPW = "Jumpman23!";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

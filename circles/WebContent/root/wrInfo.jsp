@@ -9,11 +9,13 @@
 
 	<!-- Link wrInfo.css -->
 	<link href="../css/wrInfo.css" rel="stylesheet" type="text/css">
-	
-	<!-- Include js file -->
-	<!-- <script type="text/javascript" src="../js/wrInfo.js"></script> -->
+
 	<script>
 
+	
+	/*
+		inputPhoneNumber() : 연락처 폼 하이픈 입력 func
+	*/
 	function inputPhoneNumber(obj) {
 	    var number = obj.value.replace(/[^0-9]/g, "");
 	    var phone = "";
@@ -39,7 +41,9 @@
 	    obj.value = phone;
 	}
 	
-	
+	/*
+		validForm() : 항목 입력 검증 func
+	*/
 	function validForm(){
 		var frmInfo = document.frmInfo;
 		var stuName = frmInfo.stuName.value;
@@ -56,6 +60,9 @@
 		}
 	}
 	
+	/*
+		entValidForm() : 엔터키 입력 처리 func
+	*/
 	function entValidForm(e){
 		if(event.keyCode == 13){
 			validForm();
@@ -66,26 +73,17 @@
 </head>
 <body>
 	<%
-	
 		request.setCharacterEncoding("UTF-8");
-		/*
-		* 2020. 07. 09
-		* memo : index.jsp에서 입력한 학번을 받는 변수 생성
-		* 변수 명 : getStuNo
-		* 타입 : String
-		* writer : minjae
+	
+		/* 
+			getStuNo : index에서 입력한 학번
 		*/
 		String getStuNo = (String)request.getAttribute("inputStuNo");
 
 		if(getStuNo == null){
-			 
 			PrintWriter outs = response.getWriter();
-			 
 			outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
-			 
 			outs.flush();
-
-			
 		}
 	%>
 	
@@ -93,10 +91,7 @@
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
 
-	<!-- 
-	2020. 07. 08.
-	writer : minjae 
-	-->
+
 	<form onsubmit="return false;" action="../root/chkInterest.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 🍀 <%=getStuNo %> 님 환영합니다 🍀 </span>

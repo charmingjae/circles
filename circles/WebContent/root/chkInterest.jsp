@@ -10,6 +10,12 @@
 	<!-- Link chkInterest.css -->
 	<link href="../css/chkInterest.css" rel="stylesheet" type="text/css">
 	<script>
+	
+	/* 
+		validForm() : 체크박스 선택 여부 확인 func
+		isInterChk : 체크 여부 변수
+		arr_Inter : 체크 박스 요소 변수
+	*/
 	function validForm(){
 		var isInterChk = false;
 		var arr_Inter = document.getElementsByName("interest");
@@ -36,29 +42,29 @@
 	<%
 	
 		request.setCharacterEncoding("UTF-8");
+
 		/*
-		* 2020. 07. 09
-		* memo : index.jsp에서 입력한 학번을 받는 변수 생성
-		* 변수 명 : getStuNo
-		* 타입 : String
-		* writer : minjae
+			getStuNo : index에서 입력한 학번 저장 변수
+			getStuName : 학생 이름 저장 변수
+			getStuPhone : 학생 연락처 저장 변수
+			getStuGrade : 학년 저장 변수
+			getStuClass : 반 저장 변수
 		*/
+		
 		String getStuNo = request.getParameter("stuNo");
 		if(getStuNo == null){
-			 
 			PrintWriter outs = response.getWriter();
-			 
 			outs.println("<script>alert('정상적으로 학번을 입력하세요.'); location.href='index.jsp';</script>");
-			 
 			outs.flush();
-
-			
 		}
+		
 		String getStuName = request.getParameter("stuName");
 		String getStuPhone = request.getParameter("stuPhone");
 		String getStuGrade = request.getParameter("grade");
 		String getStuClass = request.getParameter("stuClass");
 		
+		
+		/* 메시지 출력용 */
 		System.out.println("학번 : " + getStuNo);
 		System.out.println("이름 : " + getStuName);
 		System.out.println("번호 : " + getStuPhone);
@@ -71,10 +77,6 @@
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
 
-	<!-- 
-	2020. 07. 08.
-	writer : minjae 
-	-->
 	<form onsubmit="return false;" action="../proc/enterProc.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 몇 가지만 더 물어볼게요!🥰</span>

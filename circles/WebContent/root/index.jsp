@@ -9,6 +9,11 @@
 	<!-- Link index.css -->
 	<link href="../css/index.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
+	
+		/*
+			validForm() : 학번 검증 func
+			stuNo : 입력한 학번 저장 변수
+		*/
 		function validForm(){
 			var frmStuNo = document.frmStuNo;
 			var stuNo = frmStuNo.inputStuNo.value;
@@ -26,12 +31,18 @@
 			}
 		}
 		
+		/*
+			entValidForm() : 엔터키 입력 발생했을 때 처리 func
+		*/
 		function entValidForm(e){
 			if(event.keyCode == 13){
 				validForm();
 			}
 		}
 		
+		/*
+			maxLengthCheck() : 최대 길이 검증 func
+		*/
 		function maxLengthCheck(object){
 			if(object.value.length > object.maxLength){
 				object.value = object.value.slice(0, object.maxLength);
@@ -43,14 +54,7 @@
 <body>
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
-	<!-- 
-	2020. 07. 08.
-	writer : minjae 
-	
-	2020. 07. 09.
-	memo : form tag 추가
-	writer : minjae
-	-->
+
 	<form onsubmit="return false;" action="../proc/chkDupStuNo.jsp" class="container" method="post" name="frmStuNo">
 		<div class="container">
 			<span> 모죽! </span>

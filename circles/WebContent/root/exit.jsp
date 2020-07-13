@@ -13,6 +13,10 @@
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
+	
+		/* 
+			접수 마지막 페이지
+		*/
 	%>
 	
 	

@@ -15,6 +15,8 @@
 <body>
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
+	
+	<!-- 연락처 페이지. 동아리 임원 명부 넣을 예정 :-) -->
 
 	<form onsubmit="return false;" action="wrInfo.jsp" class="container" method="post" name="frmStuNo">
 		<div class="container">
