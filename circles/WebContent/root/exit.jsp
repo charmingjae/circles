@@ -28,7 +28,7 @@
 		<span id="showWelcome"> 감사합니다! </span>
 		<span id="showWelcome"> 검토 후에 연락 드리겠습니다! </span>
 		<div class="subBtn">
-			<button>체크 했어요!</button>
+			<button onclick="location.href='index.jsp'">메인으로</button>
 		</div>
 	</div>
 	
