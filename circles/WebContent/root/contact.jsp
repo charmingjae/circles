@@ -20,7 +20,16 @@
 
 	<form onsubmit="return false;" action="wrInfo.jsp" class="container" method="post" name="frmStuNo">
 		<div class="container">
-			<span id="head"> Contact </span>
+			<span id="head"> Contact </span><br/>
+			<span id="head"> </span><br/>
+			<div class="main">
+				<span id="showEtc"> </span>
+				<span id="showEtc" style="font-weight:bold;"> 조석희 </span>
+				<i class="fa fa-google fa-2x" aria-hidden="true"></i>
+				<span id="showEtc"> JOSEOKHEE17@GMAIL.COM  </span>
+				<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+				<span id="showEtc"> https://github.com/joseokhee</span>
+			</div>
 			<div class="main">
 				<span id="showEtc"> </span>
 				<span id="showEtc" style="font-weight:bold;"> 차민재 </span>
@@ -28,6 +37,14 @@
 				<span id="showEtc"> VBLOADCOM@GMAIL.COM  </span>
 				<i class="fa fa-github fa-2x" aria-hidden="true"></i>
 				<span id="showEtc"> https://github.com/charmingjae</span>
+			</div>
+			<div class="main">
+				<span id="showEtc"> </span>
+				<span id="showEtc" style="font-weight:bold;"> 정상원 </span>
+				<i class="fa fa-google fa-2x" aria-hidden="true"></i>
+				<span id="showEtc"> EKDLDH@NAVER.COM  </span>
+				<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+				<span id="showEtc"> https://github.com/shybi0804</span>
 			</div>
 		</div>
 	</form>

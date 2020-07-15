@@ -26,6 +26,10 @@
 				alert('학번을 정확히 입력해주세요.');
 				return;
 			}
+			else if(stuNo < 0){
+				alert('학번은 음수일 수가 음습니다 :-)');
+				return;
+			}
 			else{
 				frmStuNo.submit();
 			}

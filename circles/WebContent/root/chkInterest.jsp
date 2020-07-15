@@ -62,15 +62,13 @@
 		String getStuPhone = request.getParameter("stuPhone");
 		String getStuGrade = request.getParameter("grade");
 		String getStuClass = request.getParameter("stuClass");
-		
-		
+
 		/* 메시지 출력용 */
 		System.out.println("학번 : " + getStuNo);
 		System.out.println("이름 : " + getStuName);
 		System.out.println("번호 : " + getStuPhone);
 		System.out.println("반 - 번호 : " + getStuGrade + "-" + getStuClass);
 		System.out.println("");
-		
 	%>
 	
 	

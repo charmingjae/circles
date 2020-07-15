@@ -32,6 +32,8 @@ body{
 } */
 
 .container{
+	display:inline-block;
+	width:100%;
 	position:absolute;
 	left:50%;
 	top:50%;
@@ -50,6 +52,9 @@ body{
 
 /* 학번 입력 div Settings */
 div .main{
+	margin-left: 30px;
+	margin-right: 30px;
+	display:inline-block;
     height:100%;
     width: 400px;
     border: 2px solid #70c3a7;
