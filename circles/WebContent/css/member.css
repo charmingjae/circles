@@ -99,7 +99,7 @@ table{
 
 th{
 	padding:10px;
-	background:#2e453b;
+	background:#ff60ba;
 	color: #ffffff;
 	font-size:25px;
 }
@@ -110,11 +110,11 @@ td{
 	padding-bottom:8px;
 }
 
-#btnDel{
+#mojDel{
 	background-color:red;
 }
 
-#btnDel:hover{
+#mojDel:hover{
 	color:#ffffff;
 	background: black;
 }

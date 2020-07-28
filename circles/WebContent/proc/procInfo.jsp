@@ -52,7 +52,7 @@
 			if(!dbCon.rs.getString(1).equals("1")){
 				%>
 					<script>
-						alert("해당 학번의 정보가 없거나, 비밀번호룰 확인하세요.");
+						alert("해당 학번의 정보가 없거나, 비밀번호를 확인하세요.");
 						history.go(-1);
 					</script>
 				<%

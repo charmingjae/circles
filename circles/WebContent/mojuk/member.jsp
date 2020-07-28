@@ -9,7 +9,7 @@
 	<title>우동</title>
 
 	<!-- Link admPg.css -->
-	<link href="../css/admPg.css" rel="stylesheet" type="text/css">
+	<link href="../css/member.css" rel="stylesheet" type="text/css">
 	<script
 	  src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
@@ -43,8 +43,8 @@
 		
 		/* 폼 전송 */
 		function subList(e){
-			var isInterChk = false;
 			var btnId = e.id;
+			var isInterChk = false;
 			var arr_Inter = document.getElementsByName("selChk");
 			var frmEntryInfo = document.frmEntryInfo;
 			for(var i=0; i<arr_Inter.length; i++){
@@ -58,15 +58,13 @@
 				alert("대상을 선택해주세요.");
 				return false;
 			}
-			else if(btnId=="btnEnter"){
-				frmEntryInfo.action="../proc/admProc.jsp?btn=ent";
+			else if(btnId=="mojDel"){
+				frmEntryInfo.action="../proc/admProc.jsp?btn=mojDel";
 				frmEntryInfo.submit();
 			}
 			else{
-				frmEntryInfo.action="../proc/admProc.jsp?btn=del";
-				frmEntryInfo.submit();
+
 			}
-			
 		}
 		
 	</script>
@@ -93,8 +91,8 @@
 		else{
 		int total = 0;
 		dbConnection dbCon = new dbConnection();
-		String cnt = "SELECT COUNT(*) FROM newb";
-		String sql = "SELECT * FROM newb order by _id desc";
+		String cnt = "SELECT COUNT(*) FROM coms_mojuk";
+		String sql = "SELECT * FROM coms_mojuk order by _id desc";
 		dbCon.select(cnt);
 		while(dbCon.rs.next())
 		{
@@ -104,11 +102,11 @@
 	%>
 	<form onsubmit="return false;" action="../proc/admProc.jsp" class="container" method="post" name="frmEntryInfo">
 	<div class="container">
-		<span> 신청 현황 </span><br/><br/>
+		<span> 동아리원😎 </span><br/><br/>
 		<span class="spanTotal"> 총 <%=total %>명 </span>
 		<div class="main">
 			<div class="subBtn">
-				<button type="button" id="btnDel" onclick="subList(this)" value="del">삭 ! 제</button>
+				<button type="button" id="mojDel" onclick="subList(this)" value="del">삭 ! 제</button>
 			</div>
 			<table border="1">
 				<tr>
@@ -146,7 +144,7 @@
 				%>
 			</table>
 			<div class="subBtn">
-				<button type="button" id="btnEnter" onclick="subList(this)" value="enter">너, 내 동료가 되어라.</button>
+				<button type="button" id="btnEnt" onclick="test(this)" value="enter">너, 내 동료가 되어라.</button>
 			</div>
 		</div>
 	</div>
