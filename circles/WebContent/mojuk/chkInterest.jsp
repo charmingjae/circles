@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link chkInterest.css -->
 	<link href="../css/chkInterest.css" rel="stylesheet" type="text/css">

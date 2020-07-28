@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link contact.css -->
 	<link href="../css/contact.css" rel="stylesheet" type="text/css">

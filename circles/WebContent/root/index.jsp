@@ -4,69 +4,23 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link index.css -->
-	<link href="../css/index.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript">
+	<link href="../css/main.css" rel="stylesheet" type="text/css">
 	
-		/*
-			validForm() : 학번 검증 func
-			stuNo : 입력한 학번 저장 변수
-		*/
-		function validForm(){
-			var frmStuNo = document.frmStuNo;
-			var stuNo = frmStuNo.inputStuNo.value;
-			
-			if(!stuNo){
-				alert('학번을 입력해주세요.');
-				return;
-			}
-			else if(stuNo.length > 9 || stuNo.length < 9){
-				alert('학번을 정확히 입력해주세요.');
-				return;
-			}
-			else if(stuNo < 0){
-				alert('학번은 음수일 수가 음습니다 :-)');
-				return;
-			}
-			else{
-				frmStuNo.submit();
-			}
-		}
-		
-		/*
-			entValidForm() : 엔터키 입력 발생했을 때 처리 func
-		*/
-		function entValidForm(e){
-			if(event.keyCode == 13){
-				validForm();
-			}
-		}
-		
-		/*
-			maxLengthCheck() : 최대 길이 검증 func
-		*/
-		function maxLengthCheck(object){
-			if(object.value.length > object.maxLength){
-				object.value = object.value.slice(0, object.maxLength);
-			}
-		}
-		
-	</script>
 </head>
 <body>
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
-
-	<form onsubmit="return false;" action="../proc/chkDupStuNo.jsp" class="container" method="post" name="frmStuNo">
 		<div class="container">
-			<span> 모죽! </span>
+			<span> 우동 </span>
 			<div class="main">
-				<input type="number" oninput="maxLengthCheck(this)" onkeydown="entValidForm()" maxlength="9" name="inputStuNo" placeholder="학번을 입력하세요.">
-				<button type="button" onclick="validForm()">확인</button>
+				<span>우리들의 동아리</span> <br/>
+			</div>
+			<div class="subBtn">
+				<button type="button" onclick="location.href='selCircles.jsp'">시작하기</button>
 			</div>
 		</div>
-	</form>
 </body>
 </html>

@@ -55,7 +55,7 @@
 		}
 		else{
 			request.setAttribute("inputStuNo", getStuNo);
-			request.getRequestDispatcher("../root/wrInfo.jsp").forward(request, response);
+			request.getRequestDispatcher("../mojuk/wrInfo.jsp").forward(request, response);
 		}
 	}
 

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
+body, table, div, .container, span, input, .main{ font-family: ‘Roboto’, ‘Spoqa Han Sans’, ‘Spoqa Han Sans JP’, ‘Sans-serif’; } */
+
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+}
+
+
+/*font-weight는 100(thin), 400(normal), 700(bold)만 사용하세요.*/
+
+
+/* Chrome, iex, fire-fox Settings */
+input:-ms-input-placeholder {color:#a8a8a8;}
+input::-webkit-input-placeholder{color:#a8a8a8;}
+input::-moz-placeholder{columns: #a8a8a8;}
+
+/* Head Comment */
+/* 나중에 px단위를 가변 단위로 바꿀 수 있으면 좋겠다. :-) */
+
+html,body{
+	height: 100%;
+}
+
+body{
+	display:table-cell;
+	margin: 0 auto;
+}
+
+/* .container{
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	text-align:center;
+} */
+
+.container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	text-align:center;
+}
+
+
+/* 모죽! 관련 css */
+.container span{
+	font-size: 70px;
+	font-weight: bold; 
+}
+
+
+/* 학번 입력 div Settings */
+div .main{
+    height:100%;
+    width: 400px;
+    /* border: 2px solid #70c3a7; */
+    background: #ffffff;
+    margin-top: 20px;
+}
+
+.main>span{
+	font-size:25px;
+}
+
+input{
+	font-size: 16px;
+	width: 325px;
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+}
+
+div .subBtn{
+	display:inline-block;
+    height:40px;
+    width: 100px;
+    background: #ffffff;
+    margin-top: 20px;
+}
+
+button{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	background: #70c3a7;
+	outline: none;
+	color: white;
+}
+
+button:hover{
+	color: #ffffff;
+	background: #003458;
+}

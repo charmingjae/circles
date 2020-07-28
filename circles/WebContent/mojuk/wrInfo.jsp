@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link wrInfo.css -->
 	<link href="../css/wrInfo.css" rel="stylesheet" type="text/css">
@@ -92,10 +92,10 @@
 	<%@include file ="../navbar/navbar.jsp" %>
 
 
-	<form onsubmit="return false;" action="../root/chkInterest.jsp" class="container" method="post" name="frmInfo">
+	<form onsubmit="return false;" action="../mojuk/chkInterest.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome">🍀<%=getStuNo %> 님 환영합니다🍀</span>
-			<span id="showRetIndex" onClick="javascript:location.href='../root/index.jsp'" style="cursor:hand" onfocus="blur();"> >학번 다시 입력하기< </span>
+			<span id="showRetIndex" onClick="javascript:location.href='../mojuk/mojuk.jsp'" style="cursor:hand" onfocus="blur();"> >학번 다시 입력하기< </span>
 			<span id="showEtc"> 당신에 대해 알고싶어요!</span>
 			<div class="main">
 				<input type="text" onkeydown="entValidForm()" name="stuName" placeholder="이름">

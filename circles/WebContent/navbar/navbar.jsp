@@ -14,7 +14,7 @@
 	%>
 <body>
 	<ul id="main-menu">
-		<li class="headName" id="main-menu1"><a href="../root/index.jsp" class="headName">CIRCLES</a></li>
+		<li class="headName" id="main-menu1"><a href="../root/index.jsp" class="headName">우동</a></li>
 		<%
 			if((getSession != null) && (getSession.isEmpty() == false)){
 				%>
@@ -28,7 +28,7 @@
 			else{
 				
 				%>
-				<li style="float:right"><a class="active" href="../root/login.jsp">롸긴</a></li>
+				<li style="float:right"><a class="active" href="../root/status.jsp">STATUS</a></li>
 				<%
 			}
 		%>

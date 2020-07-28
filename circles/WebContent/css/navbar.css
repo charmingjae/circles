@@ -44,6 +44,10 @@ li .headName{
 	visibility: hidden;
 }
 
+#main-menu1{
+	font-size: 20px;
+}
+
 #main-menu1, #main-menu2{
 	float:left;
 }

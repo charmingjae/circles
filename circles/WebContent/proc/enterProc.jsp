@@ -39,7 +39,6 @@
 			else{
 				getInterest = getInterest + getStuInterest[i] + ", ";
 			}
-			
 		}
 		System.out.println("관심사 변수 : " + getInterest);
 		System.out.println(" ");
@@ -47,18 +46,12 @@
 		
 		/* Insert Part */
 		dbConnection dbCon = new dbConnection();
-		
 		dbCon.connect();
-		
 		String sql = "Insert into newb(stuNo, stuName, stuPhone, stuGrade, stuClass, stuInterest) " + 
 					"Values('" + getStuNo + "', '" + getStuName + "', '" + getStuPhone + "', '" + getStuGrade + "', '" + getStuClass + "', '" + getInterest + "')";
-		
 		dbCon.insert(sql);
-		
 		dbCon.close();
-		
-		
-		response.sendRedirect("../root/exit.jsp");
+		response.sendRedirect("../mojuk/exit.jsp");
 		
 	%>
 

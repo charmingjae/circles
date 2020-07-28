@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link admPg.css -->
 	<link href="../css/admPg.css" rel="stylesheet" type="text/css">

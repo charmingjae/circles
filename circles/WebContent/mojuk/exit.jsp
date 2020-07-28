@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MOJUK</title>
+	<title>우동</title>
 
 	<!-- Link chkInterest.css -->
 	<link href="../css/chkInterest.css" rel="stylesheet" type="text/css">
@@ -28,7 +28,7 @@
 		<span id="showWelcome"> 감사합니다! </span>
 		<span id="showWelcome"> 검토 후에 연락 드리겠습니다! </span>
 		<div class="subBtn">
-			<button onclick="location.href='index.jsp'">메인으로</button>
+			<button onclick="location.href='../root/index.jsp'">메인으로</button>
 		</div>
 	</div>
 	
