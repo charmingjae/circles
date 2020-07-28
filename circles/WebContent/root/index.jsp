@@ -19,7 +19,7 @@
 				<span>우리들의 동아리</span> <br/>
 			</div>
 			<div class="subBtn">
-				<button type="button" onclick="location.href='selCircles.jsp'">시작하기</button>
+				<button type="button" onclick="location.href='../root/selCircles.jsp'">시작하기</button>
 			</div>
 		</div>
 </body>
