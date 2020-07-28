@@ -24,22 +24,14 @@
 		String getStuPhone = request.getParameter("stuPhone");
 		String getStuGrade = request.getParameter("stuGrade");
 		String getStuClass = request.getParameter("stuClass");
-		String[] getStuInterest = request.getParameterValues("interest");
-		String getInterest = "";
+		/* String[] getStuInterest = request.getParameterValues("interest"); */
+		String getStuPw = request.getParameter("inputPw");
+		String getInterest = request.getParameter("stuInter");
 		
 		System.out.println("학번 : " + getStuNo);
 		System.out.println("이름 : " + getStuName);
 		System.out.println("번호 : " + getStuPhone);
 		System.out.println("반 - 번호 : " + getStuGrade + "-" + getStuClass);
-		for(int i = 0; i < getStuInterest.length; i++)
-		{
-			if(i == (getStuInterest.length -1)){
-				getInterest = getInterest + getStuInterest[i];
-			}
-			else{
-				getInterest = getInterest + getStuInterest[i] + ", ";
-			}
-		}
 		System.out.println("관심사 변수 : " + getInterest);
 		System.out.println(" ");
 		
@@ -47,11 +39,33 @@
 		/* Insert Part */
 		dbConnection dbCon = new dbConnection();
 		dbCon.connect();
-		String sql = "Insert into newb(stuNo, stuName, stuPhone, stuGrade, stuClass, stuInterest) " + 
-					"Values('" + getStuNo + "', '" + getStuName + "', '" + getStuPhone + "', '" + getStuGrade + "', '" + getStuClass + "', '" + getInterest + "')";
-		dbCon.insert(sql);
-		dbCon.close();
-		response.sendRedirect("../mojuk/exit.jsp");
+		
+		String validStuNo = "SELECT COUNT(*) FROM newb WHERE stuNo = '" + getStuNo + "'";
+		
+		dbCon.select(validStuNo);
+		
+		if((dbCon.rs.next() == false) || (getStuNo.isEmpty() == true))
+		{
+			return;
+		}
+		else{
+			if(dbCon.rs.getString(1).equals("1")){
+				%>
+					<script>
+						alert("이미 가입신청을 한 학번입니다.");
+						location.href="../root/index.jsp";
+					</script>
+				<%
+			}
+			else{
+				String sql = "Insert into newb(stuNo, stuName, stuPhone, stuGrade, stuClass, stuInterest, stuPw) " + 
+						"Values('" + getStuNo + "', '" + getStuName + "', '" + getStuPhone + "', '" + getStuGrade + "', '" + getStuClass + "', '" + getInterest + "', '" + getStuPw +"');";
+				dbCon.insert(sql);
+				dbCon.close();
+				response.sendRedirect("../mojuk/exit.jsp");
+			}
+		}
+		
 		
 	%>
 

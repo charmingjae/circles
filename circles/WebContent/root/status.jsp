@@ -14,9 +14,9 @@
 			validForm() : 학번 검증 func
 			stuNo : 입력한 학번 저장 변수
 		*/
-		function validForm(){
-			var frmStuNo = document.frmStuNo;
-			var stuNo = frmStuNo.inputStuNo.value;
+		function validStuNo(){
+			var frmStuNo = document.frmStuInfo;
+			var stuNo = frmStuInfo.inputStuNo.value;
 			
 			if(!stuNo){
 				alert('학번을 입력해주세요.');
@@ -31,7 +31,20 @@
 				return;
 			}
 			else{
-				frmStuNo.submit();
+				document.getElementById("inputStuPw").style.display="block";
+				document.getElementById("nextButton").style.display="none";
+			}
+		}
+		
+		function validForm(){
+			var frmStuNo = document.frmStuInfo;
+			var stuPw = frmStuInfo.inputStuPw.value;
+			if(stuPw == ""){
+				alert('비밀번호를 입력하세요.');
+				return;
+			}
+			else{
+				frmStuInfo.submit();
 			}
 		}
 		
@@ -59,11 +72,15 @@
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
 
-	<form onsubmit="return false;" action="../proc/procInfo.jsp" class="container" method="post" name="frmStuNo">
+	<form onsubmit="return false;" action="../proc/procInfo.jsp" class="container" method="post" name="frmStuInfo">
 		<div class="container">
 			<span> 내 정보 </span>
 			<div class="main">
-				<input type="number" oninput="maxLengthCheck(this)" onkeydown="entValidForm()" maxlength="9" name="inputStuNo" placeholder="학번을 입력하세요.">
+				<input type="number" oninput="maxLengthCheck(this)" maxlength="9" name="inputStuNo" placeholder="학번을 입력하세요.">
+				<button type="button" onclick="validStuNo()" id="nextButton">다음</button>
+			</div>
+			<div class="main" id="inputStuPw" style="display:none;">
+				<input type="password" onkeydown="entValidForm()" maxlength="9" name="inputStuPw" placeholder="비밀번호를 입력하세요.">
 				<button type="button" onclick="validForm()">확인</button>
 			</div>
 		</div>

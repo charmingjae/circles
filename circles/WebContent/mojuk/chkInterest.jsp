@@ -75,7 +75,7 @@
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
 
-	<form onsubmit="return false;" action="../proc/enterProc.jsp" class="container" method="post" name="frmInfo">
+	<form onsubmit="return false;" action="../mojuk/inputPw.jsp" class="container" method="post" name="frmInfo">
 		<div class="container">
 			<span id="showWelcome"> 몇 가지만 더 물어볼게요!🥰</span>
 			<span id="showRetIndex" onClick="javascript:history.back();" style="cursor:hand" onfocus="blur();"> >정보 다시 입력하기< </span>

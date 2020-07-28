@@ -12,8 +12,13 @@
 <body>
 
 	<%
+		/* Get student Info */
+		String getStuNo = (String)request.getAttribute("stuNo");
+		String getStuName = (String)request.getAttribute("stuName");
+		String getStuPhone = (String)request.getAttribute("stuPhone");
+		String getStuGrade = (String)request.getAttribute("stuGrade");
+		String getStuInter = (String)request.getAttribute("stuInter");
 		
-		String getStuNo = (String)request.getAttribute("inputStuNo");
 	%>
 	<!-- include header -->
 	<%@include file ="../navbar/navbar.jsp" %>
@@ -22,34 +27,26 @@
 		<span> <%=getStuNo %>의 신청 정보 </span>
 		
 		<div class="spanBox">
-			<span style="font-size:20px"> 이름 </span>
-		</div>
-		<div class="main">
+			<span style="font-size:20px"> 이름  > <%=getStuName %></span>
 		</div>
 		
 		<div class="spanBox">
-			<span style="font-size:20px"> 학번 </span>
+			<span style="font-size:20px"> 학번 > <%=getStuNo %></span>
 		</div>
-		<div class="main">
+
+		
+		<div class="spanBox">
+			<span style="font-size:20px"> 학년 - 반 > <%=getStuGrade %></span>
+		</div>
+
+		
+		<div class="spanBox">
+			<span style="font-size:20px"> 연락처 > <%=getStuPhone %></span>
 		</div>
 		
 		<div class="spanBox">
-			<span style="font-size:20px"> 학년 - 반 </span>
-		</div>
-		<div class="main">
-		</div>
-		
-		<div class="spanBox">
-			<span style="font-size:20px"> 연락처 </span>
-		</div>
-		<div class="main">
-		</div>
-		
-		<div class="spanBox">
-			<span style="font-size:20px"> 관심사 </span>
-		</div>
-		<div class="main">
-			
+			<span style="font-size:20px"> 관심사 </span><br/><br/>
+			<span style="font-size:20px"><%=getStuInter %></span>
 		</div>
 		
 	</div>
